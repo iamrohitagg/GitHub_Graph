@@ -25,4 +25,4 @@ Allows the user to commit on past year.
 ### add(value, 'd')
 
 <br>
-Difference of commits between two commits. Less the value of first paramter(value), more dense the contributon graph will be.
+Difference of commits between timestamps. Less the value of first paramter(value), more dense the contributon graph will be.
