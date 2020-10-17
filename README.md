@@ -1,28 +1,53 @@
-# Github-bot
+# Github Bot
 
-<br>
-Does your github graph looks like a noob with few number of commits and push ? Dou you want to have your contribution graph with lots of commit like pro with number of commits. This project is to your rescue.
+![alt text](https://img.shields.io/npm/v/moment.svg?style=flat "moment")
 
-## npm install
+Does your GitHub Graph looks like a noob with a few number of Commits and Push ? Dou you want to have your contribution graph with lots of commit like pro. This project is to your rescue.
 
-<br>
-Installs the required packages.
+## Table of Contents
 
-### node index.js
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Commits](#frequency)
+
+### Introduction
+
+The project uses [Moment](https://www.npmjs.com/package/moment), a JavaScript date library for parsing, validating, manipulating, and formatting dates. It allows you to make a commit on past date done by subtracting the years from given date and make commits over a period of regular days.
+
+### Installation
+
+Clone and fork the repository to make the changes in your local system.
+
+```git-bash
+git clone https://github.com/iamrohitagg/GitHub_Graph.git
+cd Github_Graph
+```
+
+The following command creates a directory named node_modules and installs all the required packages in that.
+
+```javascript
+npm install
+```
+
+Finally, run the project to see the magic of Moment package.
+
+```javascript
+node index.js
+```
 
 Bang !
-<br>
 You can see the commit date in terminal.
 
-## Customize the commits frequency
+### Commits
 
-### subtract(value, 'y')
+```javascript
+subtract(year, "y");
+```
 
-<br>
-Allows the user to commit on past year.
-<br>
+year here represents the year to start the commits. Greater the value of year, more dense the graph along main axis. Example - subtract(2,'y')
 
-### add(value, 'd')
+```javascript
+add(days, "d");
+```
 
-<br>
-Difference of commits between timestamps. Less the value of first paramter(value), more dense the contributon graph will be.
+Difference of commits between timestamps. Less the value of days, more dense the contributon graph will be. Example - add(4,'d')
