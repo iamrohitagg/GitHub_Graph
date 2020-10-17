@@ -2,7 +2,7 @@
 
 ![alt text](https://img.shields.io/npm/v/moment.svg?style=flat "moment")
 
-Does your GitHub Graph looks like a noob with a few number of Commits and Push ? Dou you want to have your contribution graph with lots of commit like pro. This project is to your rescue.
+Does your GitHub Graph looks like a noob with a few number of Commits and Push ? Do you want to have your contribution graph with lots of commit like pro. This project is to your rescue.
 
 ## Table of Contents
 
