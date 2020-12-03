@@ -14,10 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "core-util-is": "^1.0.2",
-    "jsonfile": "^6.0.1",
+    "jsonfile": "^6.1.0",
     "moment": "^2.29.1",
     "random": "^2.2.0",
-    "simple-git": "^2.21.0",
+    "simple-git": "^2.24.0",
     "webpack-dev-server": "^3.11.0"
   },
   "devDependencies": {}
