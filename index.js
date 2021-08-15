@@ -28,4 +28,4 @@ const makeCommit = (n) => {
   });
 };
 
-makeCommit(120);
+makeCommit(50);

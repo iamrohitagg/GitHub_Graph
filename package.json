@@ -4,13 +4,14 @@
   "description": "Do you want to have coll graph?",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "(https://github.com/psycho376/github-bot)"
   },
-  "author": "Rohit Aggarwal",
+  "author": "Elmirbek Alisherov",
   "license": "ISC",
   "dependencies": {
     "core-util-is": "^1.0.2",
