@@ -17,7 +17,7 @@
     "jsonfile": "^6.1.0",
     "moment": "^2.29.1",
     "random": "^3.0.6",
-    "simple-git": "^2.38.0",
+    "simple-git": "^3.5.0",
     "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {}
