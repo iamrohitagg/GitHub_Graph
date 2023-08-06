@@ -6,12 +6,16 @@ const simpleGit = require("simple-git");
 const random = require("random");
 const FILE_PATH = "./data.json";
 
+
+// const git: SimpleGit = simpleGit('https://github.com/iamrohitagg/GitHub_Graph.git');
+
+
 const makeCommit = (n) => {
   if (n === 0) return simpleGit().push();
   const x = random.int(0, 54);
   const y = random.int(0, 6);
   const DATE = moment()
-    .subtract(2, "y")
+    .subtract(0, "y")
     .add(1, "d")
     .add(x, "w")
     .add(y, "d")
