@@ -1,52 +1,38 @@
-const FILE_PATH = "./data.json";
-const simpleGit = require("simple-git");
 const jsonfile = require("jsonfile");
+
 const moment = require("moment");
+const simpleGit = require("simple-git");
+
 const random = require("random");
+const FILE_PATH = "./data.json";
 
-// Change the working directory to where your local repository is located
-const git = simpleGit("/Users/rohitaggarwal/Desktop/test/GitHub_Graph");
+// const git: SimpleGit = simpleGit('https://github.com/iamrohitagg/GitHub_Graph.git');
 
-const makeCommit = (n) => {
-  if (n === 0) {
-    // Push changes to the remote repository
-    git.push(["-u", "origin", "master"], (err, result) => {
-      if (err) {
-        console.error("Error pushing to remote:", err);
-      } else {
-        console.log("Pushed changes to remote repository");
-      }
-    });
-    return;
+const makeCommit = (date, commitsLeft) => {
+  if (commitsLeft === 0) {
+    return simpleGit().push();
   }
 
-  const x = random.int(0, 54);
-  const y = random.int(0, 6);
-  const DATE = moment()
-    .subtract(0, "y")
-    .add(1, "d")
-    .add(x, "w")
-    .add(y, "d")
-    .format();
-
-  const data = {
-    date: DATE,
-  };
+  const DATE = date.format();
+  const data = { date: DATE };
   console.log(DATE);
-
   jsonfile.writeFile(FILE_PATH, data, () => {
-    git
+    simpleGit()
       .add([FILE_PATH])
-      .commit(DATE, { "--date": DATE })
-      .push(["-u", "origin", "origin"], (err, result) => {
-        if (err) {
-          console.error("Error pushing to remote:", err);
+      .commit(DATE, { "--date": DATE }, () => {
+        if (commitsLeft % 30 === 0) {
+          makeCommit(date.add(1, "d"), commitsLeft - 1);
         } else {
-          console.log("Pushed changes to remote repository");
-          makeCommit(--n);
+          makeCommit(date, commitsLeft - 1);
         }
-      });
+      })
+      .push();
   });
 };
 
-makeCommit(120);
+const startDate = moment("1970-01-01");
+const endDate = moment();
+const totalDays = endDate.diff(startDate, "days");
+const totalCommits = totalDays * 30;
+
+makeCommit(startDate, totalCommits);
