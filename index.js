@@ -5,7 +5,7 @@ const moment = require("moment");
 const random = require("random");
 
 // Change the working directory to where your local repository is located
-const git = simpleGit("/Users/rohitaggarwal/Desktop/test/GitHub_Graph");
+const git = simpleGit("/Users/ibrahim.najjar/GitHub_Graph");
 
 const makeCommit = (n) => {
   if (n === 0) {
@@ -38,7 +38,7 @@ const makeCommit = (n) => {
     git
       .add([FILE_PATH])
       .commit(DATE, { "--date": DATE })
-      .push(["-u", "origin", "origin"], (err, result) => {
+      .push(["-u", "origin", "main"], (err, result) => {
         if (err) {
           console.error("Error pushing to remote:", err);
         } else {
