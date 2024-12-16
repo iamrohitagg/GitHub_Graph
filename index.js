@@ -36,16 +36,16 @@ const makeCommit = (n) => {
 
   jsonfile.writeFile(FILE_PATH, data, () => {
     git
-      .add([FILE_PATH])
-      .commit(DATE, { "--date": DATE })
-      .push(["-u", "origin", "main"], (err, result) => {
-        if (err) {
-          console.error("Error pushing to remote:", err);
-        } else {
-          console.log("Pushed changes to remote repository");
-          makeCommit(--n);
-        }
-      });
+    .add([FILE_PATH])
+    .commit(DATE, { "--date": DATE })
+    .push(["-u", "origin", "main"], (err, result) => {
+      if (err) {
+        console.error("Error pushing to remote:", err);
+      } else {
+        console.log("Pushed changes to the remote repository");
+        makeCommit(--n);
+      }
+    });
   });
 };
 
