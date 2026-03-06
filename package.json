@@ -19,6 +19,6 @@
     "nodemon": "^3.0.2",
     "random": "^5.4.1",
     "simple-git": "^3.30.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^5.2.3"
   }
 }

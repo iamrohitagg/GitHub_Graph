@@ -6,12 +6,12 @@ import random from "random";
 const FILE_PATH = "./data.json";
 
 // Initialize simple-git for your repo
-const git = simpleGit("/Users/rohit/Desktop/GitHub_Graph");
+const git = simpleGit("/Users/user/source/repos/GitHub_Graph");
 
 const makeCommit = async (n) => {
   if (n === 0) {
     try {
-      await git.push("origin", "master", { "-u": null });
+      await git.push("origin", "master", "main", "Jashwin", { "-u": null });
       console.log("All changes pushed to remote repository");
     } catch (err) {
       console.error("Error pushing to remote:", err);
